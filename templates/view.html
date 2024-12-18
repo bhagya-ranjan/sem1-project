@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+<body>
+    <h2>Search Student</h2>
+    <p>Enter your name</p>
+    <input type ="text" placeholder = "enter your name">
+    <p>Enter your Roll Number</p>
+    <input type ="text" placeholder = "enter your roll number">
+    <br>
+    <br>
+    <input type = "submit" value = "Search">
+    <table border="1">
+        <tr>
+            <!-- Adjust column names based on your CSV file -->
+            <th>Name</th>
+            <th>Rollno</th>
+            <th>Age</th>
+            <th>Branch</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student['Name'] }}</td>
+            <td>{{ student['Rollno'] }}</td>
+            <td>{{ student['Age'] }}</td>
+            <td>{{ student['Branch'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back</a>
+</body>
+</html>
